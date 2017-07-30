@@ -45,7 +45,7 @@ public class MyController implements Initializable {
 		isClient = true;
 		
 		myClient = new MyClient("192.168.0.63");
-//		myClient = new MyClient("10.100.5.128");
+//		myClient = new MyClient("10.100.174.9");
 //		myClient = new MyClient("127.0.0.1");
 		
 		if(myClient.client.isConnected()) {

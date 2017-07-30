@@ -23,7 +23,8 @@ public class MyClient{
 	public static String msg, ipAdd;
 	
 	MyController controller;
-	
+    Robot robot;
+
 	public MyClient(String ip) {
 		try {
 			client = new Socket(ip, 3000);
@@ -38,9 +39,8 @@ public class MyClient{
 		controller = new MyController();
 		i = 0;
 		
-		while(true) {
-	        Robot robot;
-			try {
+		try {
+			while(true) {
 				robot = new Robot();
 		        BufferedImage screenShot = robot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
 		        ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -56,11 +56,11 @@ public class MyClient{
 				System.out.println(i + " image reached!");
 				
 				Thread.sleep(5000);
-			} catch (AWTException e) {
-				e.printStackTrace();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
 			}
+		} catch (AWTException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 }

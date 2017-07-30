@@ -32,8 +32,8 @@ public class ClientHandler extends Thread {
 	
 	@Override
 	public void run() {
-		while(true) {
-			try {
+		try {
+			while(true) {
 				now = Calendar.getInstance();
 				
 				objIp = new ObjectInputStream(socket.getInputStream());
@@ -43,16 +43,17 @@ public class ClientHandler extends Thread {
 				fos = new FileOutputStream("g:\\ScreenShot\\"+formatter.format(now.getTime())+".jpg");
 					
 				fos.write(buffer);
-			} catch(ClassNotFoundException e) {
-				e.printStackTrace();
-			} catch(NullPointerException e) {
-	            return;
-			} catch (IOException e) {
-				return;
-			} catch(Exception e) {
-				e.printStackTrace();
-	            return;
 			}
+			
+		} catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch(NullPointerException e) {
+            return;
+		} catch (IOException e) {
+			return;
+		} catch(Exception e) {
+			e.printStackTrace();
+            return;
 		}
 	}
 }
