@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
  * @author Arafin
  *
  */
+
 public class MyController implements Initializable {
 	
 	private Thread t;

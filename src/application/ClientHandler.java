@@ -1,27 +1,26 @@
 package application;
 
-import java.net.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
-import java.io.*;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.net.Socket;
 
 /**
  * @author Arafin
  *
  */
+
 public class ClientHandler extends Thread {
 	
-	private Socket socket;
-
 	static String msg;
-
+	
+	private Socket socket;
 	private ObjectInputStream objIp;
-
 	private FileOutputStream fos;
 	
     SimpleDateFormat formatter;
-
     Calendar now;
 	
 	public ClientHandler() {
@@ -37,11 +36,9 @@ public class ClientHandler extends Thread {
 				now = Calendar.getInstance();
 				
 				objIp = new ObjectInputStream(socket.getInputStream());
-				
 				byte[] buffer = (byte[]) objIp.readObject();
 					
 				fos = new FileOutputStream("g:\\ScreenShot\\"+formatter.format(now.getTime())+".jpg");
-					
 				fos.write(buffer);
 			}
 			

@@ -1,7 +1,5 @@
 package application;
 
-import java.net.*;
-
 import javax.imageio.ImageIO;
 
 import java.awt.AWTException;
@@ -9,7 +7,11 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 /**
  * @author Arafin
@@ -17,13 +19,14 @@ import java.io.*;
  */
 public class MyClient{
 	
-	int i;
-	String ip;
-	Socket client;
+	int i;	
 	public static String msg, ipAdd;
+	String ip;
 	
 	MyController controller;
-    Robot robot;
+    
+	Robot robot;
+	Socket client;
 
 	public MyClient(String ip) {
 		try {

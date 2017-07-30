@@ -1,12 +1,15 @@
 package application;
 
-import java.net.*;
-import java.io.*;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketTimeoutException;
 
 /**
  * @author Arafin
  *
  */
+
 public class MyServer extends Thread{
 	
 	private ServerSocket serverSocket;

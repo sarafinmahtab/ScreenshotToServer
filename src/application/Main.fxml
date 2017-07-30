@@ -33,16 +33,26 @@
             <Font name="Cambria Bold" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="35.0" layoutY="59.0" mnemonicParsing="false" onAction="#openServer" prefHeight="40.0" prefWidth="110.0" text="Open Server">
+      <Button layoutX="35.0" layoutY="99.0" mnemonicParsing="false" onAction="#openServer" prefHeight="40.0" prefWidth="110.0" text="Open Server">
          <font>
             <Font name="Cambria Bold" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="259.0" layoutY="59.0" mnemonicParsing="false" onAction="#connectServer" prefHeight="40.0" prefWidth="110.0" text="Connect Server">
+      <Button layoutX="259.0" layoutY="104.0" mnemonicParsing="false" onAction="#connectServer" prefHeight="40.0" prefWidth="110.0" text="Connect Server">
          <font>
             <Font name="Cambria Bold" size="13.0" />
          </font>
       </Button>
       <Separator layoutX="200.0" layoutY="14.0" orientation="VERTICAL" prefHeight="220.0" prefWidth="0.0" />
+      <Label layoutX="69.0" layoutY="34.0" text="Server">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="295.0" layoutY="34.0" text="Client">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
